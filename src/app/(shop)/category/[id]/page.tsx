@@ -1,5 +1,5 @@
 import { Category, initialData } from "@/seed/seed";
-import notFound from "../../product/not-found";
+import notFound from "../not-found";
 import { ProductGrid, Title } from "@/components";
 
 
