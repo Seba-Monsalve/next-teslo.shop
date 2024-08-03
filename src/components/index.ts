@@ -3,6 +3,10 @@ export { ProductGridItem } from "./products/products-grid/ProductGridItem";
 
 export { Footer } from './ui/footer/Footer'
 
+export { Pagination } from './ui/pagination/Pagination'
+
+export { StockLabel } from './product/stock-label/StockLabel'
+
 export { ProductSlideShow } from './product/slideshow/ProductSlideShow'
 export { ProductMobileSlideShow } from './product/slideshow/ProductMobileSlideShow'
 export { SizeSelector } from './product/size-selector/SizeSelector'

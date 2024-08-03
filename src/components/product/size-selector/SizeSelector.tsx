@@ -1,10 +1,10 @@
-import { Size } from "@/seed/seed"
+import { ValidSize } from "@/seed/seed"
 import clsx from 'clsx';
 
 
 interface Props {
-  selectedSize: Size,
-  availableSizes: Size[]
+  selectedSize: ValidSize,
+  availableSizes: ValidSize[]
 
 }
 export const SizeSelector = ({ selectedSize, availableSizes }: Props) => {
