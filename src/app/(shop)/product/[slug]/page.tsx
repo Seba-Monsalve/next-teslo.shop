@@ -1,9 +1,9 @@
 import { getProductBySlug } from "@/actions/products/get-product-by-slug";
-import { QtySelector, SizeSelector, ProductSlideShow, ProductMobileSlideShow, StockLabel } from "@/components";
+import { ProductSlideShow, ProductMobileSlideShow, StockLabel } from "@/components";
 import { titleFont } from "@/config/font";
-import { prisma } from "@/lib/prisma";
 import { Metadata, ResolvingMetadata } from "next";
 import { notFound } from "next/navigation";
+import { AddToCart } from "./ui/AddToCart";
 
 interface Props {
   params: { slug: string }
@@ -36,14 +36,18 @@ export default async function ({ params }: Props) {
 
       {/*DESKTOP  SLIDESHOW */}
       <div className="col-span-1 md:col-span-2 ">
+
         <ProductSlideShow
+          key={product.title}
           title={product.title}
           images={product.images}
-          classname="block md:hidden" />
-        <ProductMobileSlideShow
+          classname="block sm:hidden" />
+
+         <ProductMobileSlideShow
           title={product.title}
           images={product.images}
           classname="hidden md:block" />
+
       </div>
 
       {/* DETALLES */}
@@ -55,15 +59,9 @@ export default async function ({ params }: Props) {
         </h1>
         <p className="text-lg mb-5">{product.price}</p>
 
-        {/* selector de tallas */}
+        <AddToCart product={product} />
 
-        <SizeSelector selectedSize={product.sizes[0]} availableSizes={product.sizes} />
-        {/* selector de cantidad */}
-        <QtySelector quantity={2} />
 
-        {/* boton */}
-
-        <button className="btn-primary my-5">Agregar al carrito</button>
         <h3 className="font-bold text-sm">descripcion</h3>
         <p className="font-light ">{product.description}</p>
       </div>
