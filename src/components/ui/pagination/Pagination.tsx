@@ -3,7 +3,6 @@
 import { generatePaginationNumber } from '@/utils'
 import Link from 'next/link'
 import { redirect, usePathname, useSearchParams } from 'next/navigation'
-import path from 'path'
 import React from 'react'
 import { IoChevronBackOutline, IoChevronForwardOutline } from 'react-icons/io5'
 import clsx from 'clsx';
@@ -20,19 +19,14 @@ export const Pagination = ({ totalPages }: Props) => {
     const searchParams = useSearchParams();
     const currentPage = Number(searchParams.get('page') ?? 1)
 
-    console.log({ pathName, searchParams, currentPage });
 
     if (isNaN(currentPage))
         redirect('/?page=1')
 
 
-    console.log({ currentPage,totalPages });
 
     const allPages = generatePaginationNumber(currentPage, totalPages)
-console.log({allPages});
 
-    console.log({path, searchParams, currentPage})
-    console.log({ searchParams})
 
     const createPageUrl = (pageNumber: number | string) => {
         const params = new URLSearchParams(searchParams)
@@ -44,8 +38,6 @@ console.log({allPages});
 
         params.set('page', pageNumber.toString());
         return `${pathName}?${params.toString()}`
-
-
 
     }
 

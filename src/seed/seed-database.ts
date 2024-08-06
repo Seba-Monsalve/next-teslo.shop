@@ -6,12 +6,13 @@ import { prisma } from "../lib/prisma";
 async function main() {
 
     // Borrar la data
-    await prisma.product.deleteMany(),
-        await prisma.productImage.deleteMany(),
-        await prisma.category.deleteMany()
+    await prisma.user.deleteMany();
+    await prisma.productImage.deleteMany();
+    await prisma.product.deleteMany();
+    await prisma.category.deleteMany();
 
 
-    const { categories, products } = initialData;
+    const { categories, products, users } = initialData;
 
     const categoryData = categories.map(name => ({ name }))
 
@@ -43,6 +44,8 @@ async function main() {
         await prisma.productImage.createMany({ data: imagesData });
     })
 
+
+    await prisma.user.createMany({ data: users })
 
 
 }

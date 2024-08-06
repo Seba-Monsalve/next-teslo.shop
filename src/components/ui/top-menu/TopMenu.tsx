@@ -38,22 +38,22 @@ export const TopMenu = () => {
                 <Link href='/search'>
                     <IoSearchCircleOutline className="w-10 h-10" />
                 </Link>
-
-                <Link 
-                
-                href=
-                {
-                    itemsInCart==0? '/empty':                    '/cart'
-                }>
-                    <div className="relative ">
-
+                {isLoaded &&
+                    <Link
+                        href=
                         {
-                            (isLoaded && itemsInCart > 0) &&
-                            <span className="absolute text-xs rounded-full px-1  font-bold  bg-blue-400 right-1 text-gray-100" >{itemsInCart}</span>
-                        }
-                        <IoCartOutline className="w-10 h-10" />
-                    </div>
-                </Link>
+                            itemsInCart === 0 ? '/empty' : '/cart'
+                        }>
+                        <div className="relative ">
+
+                            {
+                                (isLoaded && itemsInCart > 0) &&
+                                <span className="absolute text-xs rounded-full px-1  font-bold  bg-blue-400 right-1 text-gray-100" >{itemsInCart}</span>
+                            }
+                            <IoCartOutline className="w-10 h-10" />
+                        </div>
+                    </Link>
+                }
 
                 <button className="m-2 p-2 rounded-md transition-all hover:bg-gray-700"
                     onClick={() => openSideMenu()}

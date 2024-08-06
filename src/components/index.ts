@@ -1,3 +1,4 @@
+import { Title } from './ui/title/Title';
 export { ProductGrid } from "./products/products-grid/ProductGrid";
 export { ProductGridItem } from "./products/products-grid/ProductGridItem";
 
@@ -16,3 +17,5 @@ export { PageNotFound } from '@/components/ui/not-found/PageNotFound';
 
 export { TopMenu } from "./ui/top-menu/TopMenu";
 export { Sidebar } from "./ui/sidebar/Sidebar";
+
+export * from '../provider/Provider'

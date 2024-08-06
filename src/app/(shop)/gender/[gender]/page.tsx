@@ -39,7 +39,6 @@ export default async function ({ params, searchParams }: Props) {
 
 
 
-
   return (
 
     <main >

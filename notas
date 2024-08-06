@@ -1,0 +1,3 @@
+Proteccion de rutas
+    hacer un middleware
+    agrgar una validacion al layout para que todas las rtas hijas no accedan si no esta auth

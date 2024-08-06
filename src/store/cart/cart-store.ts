@@ -38,7 +38,6 @@ export const useCartStore = create<State>()(
             getTotalItems: () => {
                 const { cart } = get();
                 const totalQty = cart.reduce((acum, item) => acum + item.quantity, 0)
-                console.log(totalQty);
                 return totalQty;
             },
 
