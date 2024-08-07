@@ -14,12 +14,12 @@ export const Sidebar = () => {
     const [isLoading, setisLoading] = useState(true)
 
     const isAuth = !!session?.user
-    const isAdmin = session?.user.data.role === 'admin';
+    const isAdmin = session?.user.role === 'admin';
 
 
-    console.log({ isAuth, user: session?.user, isAdmin });
+    //console.log({ isAuth, user: session?.user, isAdmin });
     useEffect(() => {
-        console.log({ isAuth });
+        //yconsole.log({ isAuth });
         setisLoading(false)
     }, [isSideMenuOpen, isAuth])
 

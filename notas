@@ -1,3 +1,17 @@
 Proteccion de rutas
     hacer un middleware
     agrgar una validacion al layout para que todas las rtas hijas no accedan si no esta auth
+w
+
+
+
+evalidate parte del server
+PRISMA
+
+npx prisma migrate dev --name country
+
+par ahacer relacion solo falta poner el country Country
+
+
+react form
+no poner el name. lo maneja automacitcamente
